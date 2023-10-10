@@ -1,23 +1,24 @@
 package main
 
 import (
-	"ecommerce/controllers"
-	"ecommerce/database"
-	"ecommerce/middleware"
-	"ecommerce/routes"
+	"golang/controllers"
+	"golang/database"
+	"golang/middleware"
+	"golang/routes"
 	"log"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	port := os.Getenv("PORT")
-	if port == ""{
+	if port == "" {
 		port = "8080"
 	}
 
 	app := controllers.NewApplications(
-		database.ProductData(database.Client, "Products"), 
+		database.ProductData(database.Client, "Products"),
 		database.UserData(database.Client, "Users"),
 	)
 
