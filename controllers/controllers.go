@@ -41,7 +41,7 @@ func VerifyPassword(userPassword string, givenPassword string) (bool, string) {
 	return valid, msg
 }
 
-func Signup() gin.HandlerFunc {
+func SignUp() gin.HandlerFunc {
 
 	return func(c *gin.Context) {
 		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
@@ -147,11 +147,11 @@ func ProductViewerAdmin() gin.HandlerFunc {
 
 }
 
-func searchProduct() gin.HandlerFunc {
+func SearchProduct() gin.HandlerFunc {
 	return func(c *gin.Context) {
 
 		var productlist []models.Product
-		var ctx, cancel = context.WithTimeOut(context.Background(), 100*time.Second)
+		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
 		defer cancel()
 
 		cursor, err := ProductCollection.Find(ctx, bson.D{{}})
@@ -180,7 +180,7 @@ func searchProduct() gin.HandlerFunc {
 	}
 }
 
-func searchProductByQuery() gin.HandlerFunc {
+func SearchProductByQuery() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var searchProducts []models.Product
 		queryParam := c.Query("name")
