@@ -20,7 +20,7 @@ func DBSet() *mongo.Client {
 		log.Fatal(err)
 	}
 
-	ctx, cancel := context.WithTimeOut(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 
 	defer cancel()
 
