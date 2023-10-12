@@ -27,9 +27,6 @@ github.com/chenzhuoyu/base64x
 # github.com/dgrijalva/jwt-go v3.2.0+incompatible
 ## explicit
 github.com/dgrijalva/jwt-go
-# github.com/form3tech-oss/jwt-go v3.2.5+incompatible
-## explicit
-github.com/form3tech-oss/jwt-go
 # github.com/gabriel-vasile/mimetype v1.4.2
 ## explicit; go 1.20
 github.com/gabriel-vasile/mimetype
